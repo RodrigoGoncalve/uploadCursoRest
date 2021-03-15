@@ -1,0 +1,13 @@
+package com.algaworks.osworks.core;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Configurable;
+
+@Configurable
+public class ModelMapperConfig {
+	
+	public ModelMapper moldelMapper() {
+		return new ModelMapper();
+	}
+
+}

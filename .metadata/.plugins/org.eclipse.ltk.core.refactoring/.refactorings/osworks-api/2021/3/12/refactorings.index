@@ -1,0 +1,23 @@
+1615691767790	Encapsulate field 'id'
+1615694961246	Delete element
+1615697021679	Rename resource 'cria-tabela-comentario.sql'
+1615697390729	Rename resource 'V004__cria-tabela-comentario.sql'
+1615698327838	Rename resource 'V004__cria-tabela-comentarios.sql'
+1615698355569	Rename resource 'cria-tabela-comentarios.sql'
+1615698791582	Rename resource 'V004__cria-tabela-comentarios.sql'
+1615700016079	Rename resource 'V002__renomeando-coluna-telefone'
+1615700402440	Delete element
+1615700505641	Rename resource 'renomear-cokuna-telefon.sql'
+1615733672198	Rename resource 'V001__cria-tabela-cliente.sql'
+1615733684440	Rename resource 'V002__renomear-cokuna-telefon.sql'
+1615733706966	Rename resource 'V003__cria-tabela-ordem-servico.sql'
+1615733720375	Rename resource 'V004__cria-tabela-comentario.sql'
+1615733850768	Rename resource 'cria-tabela-cliente.sql'
+1615733900371	Rename resource 'cria-tabela-ordem-servico.sql'
+1615733931601	Rename resource 'cria-tabela-comentario.sql'
+1615736425917	Move compilation unit
+1615736434006	Move compilation unit
+1615736440516	Move compilation unit
+1615736470787	Move compilation unit
+1615737018331	Rename type 'ComntarioImput'
+1615741631057	Extract method 'buscar'

@@ -1,0 +1,17 @@
+package com.algaworks.osworks.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.algaworks.osworks.domain.model.OrdemServico;
+import com.algaworks.osworks.domain.service.GestaoOrdemServicoService;
+
+@RestController
+@RequestMapping(value= "/ordem-servico")
+public class OrdemServiceController {
+	@Autowired
+	private GestaoOrdemServicoService gestaoOrdemServico;
+
+	public OrdemServico
+}

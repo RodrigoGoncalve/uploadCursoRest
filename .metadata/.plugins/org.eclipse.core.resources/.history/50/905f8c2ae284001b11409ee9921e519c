@@ -1,0 +1,34 @@
+package com.algaworks.osworks.domain.service;
+
+import java.time.OffsetDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.algaworks.osworks.domain.model.Cliente;
+import com.algaworks.osworks.domain.model.OrdemServico;
+import com.algaworks.osworks.domain.model.PrivateStatusOrdemServico;
+import com.algaworks.osworks.domain.repository.ClienteRepository;
+import com.algaworks.osworks.domain.repository.OrdemServicoRepository;
+import com.algaworks.osworks.exception.NegocioException;
+
+@Service
+public class GestaoOrdemServicoService {
+	
+	@Autowired
+	private OrdemServicoRepository ordemServicoRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	public OrdemServico adicionar(OrdemServico ordemServico) {
+			Cliente cliente = clienteRepository.findById(ordemServico.getCliente().getId())
+					.orElseThrow(() -> new NegocioException("Cliente não encontrado"));
+			
+			ordemServico.setCliente(cliente);
+			ordemServico.setStatus(PrivateStatusOrdemServico.ABERTA);
+			ordemServico.setDataAbertura(OffsetDateTime.now());
+			
+			return ordemServicoRepository.save(ordemServico);
+		}
+}

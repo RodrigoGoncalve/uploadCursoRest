@@ -1,0 +1,38 @@
+package com.algaworks.osworks.domain.service;
+
+import java.time.OffsetDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.algaworks.osworks.api.model.Comentario;
+import com.algaworks.osworks.domain.model.Cliente;
+import com.algaworks.osworks.domain.model.OrdemServico;
+import com.algaworks.osworks.domain.repository.ClienteRepository;
+import com.algaworks.osworks.domain.repository.ComentarioRepository;
+import com.algaworks.osworks.domain.repository.OrdemServicoRepository;
+import com.algaworks.osworks.exception.NegocioException;
+
+@Service
+public class CadastroClienteService {
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private OrdemServicoRepository ordemServicoRepository;
+	
+
+	public Cliente salvar(Cliente cliente) {
+		Cliente clienteExistente = clienteRepository.findByEmail(cliente.getEmail());
+		
+		if(clienteExistente != null && !clienteRepository.equals(cliente)) {
+			throw new NegocioException("Já existe um cliente cadastrado com este em-mail");
+		}
+		return clienteRepository.save(cliente);
+	}
+	
+	public void excluir (Long clienteId) {
+		clienteRepository.deleteById(clienteId);
+	}
+
+}
